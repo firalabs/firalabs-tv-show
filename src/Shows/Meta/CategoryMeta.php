@@ -12,18 +12,21 @@ use Firalabs\View;
  */
 class CategoryMeta extends AbstractMeta
 {
-    
+
     protected $id = 'firalabs_tv_show_category';
-
-    protected $title = 'Category';
-
-    protected $description = 'The category of post you want to display on the show page';
 
     protected $metaKeys = array(
         'firalabs_tv_show_category'
     );
 
     protected $context = 'side';
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->title = __('Category', 'firalabs-tv-show');
+        $this->description = __('The category of post you want to display on the show page', 'firalabs-tv-show');
+    }
 
     /**
      * Render the meta box
@@ -36,7 +39,7 @@ class CategoryMeta extends AbstractMeta
     {
         View::make('metabox/show-category.php', array(
             'metaKey' => $this->metaKey,
-            'description' => $this->description,
+            'label' => $this->description,
             'post' => $post,
             'categories' => get_categories()
         ));

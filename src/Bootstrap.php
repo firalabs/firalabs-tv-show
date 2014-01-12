@@ -16,12 +16,12 @@ class Bootstrap
 
     public function __construct()
     {
+        $this->il8n();
+        
         add_action('init', array(
             $this,
             'init'
         ));
-        
-        $this->il8n();
     }
 
     public function init()
@@ -35,6 +35,6 @@ class Bootstrap
 
     public function il8n()
     {
-        load_plugin_textdomain('firalabs-tv-show', false, basename(dirname(__FILE__)) . '/languages');
+        load_plugin_textdomain('firalabs-tv-show', false, basename() . '/firalabs-tv-show/languages');
     }
 }

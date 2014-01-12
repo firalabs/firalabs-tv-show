@@ -10,15 +10,23 @@ namespace Firalabs\Shows\Meta;
  */
 class ShowMeta extends AbstractMeta
 {
-    
+
     protected $id = 'firalabs_tv_show';
-
-    protected $title = 'Show';
-
-    protected $description = 'The url of the show';
 
     protected $metaKeys = array(
         'firalabs_tv_show_image',
         'firalabs_tv_show_description'
     );
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->title = __('Show', 'firalabs-tv-show');
+        $this->description = __('The url of the show', 'firalabs-tv-show');
+        
+        $this->labels = array(
+            'firalabs_tv_show_image' => __('Image', 'firalabs-tv-show'),
+            'firalabs_tv_show_description' => __('Description', 'firalabs-tv-show')
+        );
+    }
 }

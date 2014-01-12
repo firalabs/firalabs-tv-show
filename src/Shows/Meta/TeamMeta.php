@@ -13,12 +13,20 @@ class TeamMeta extends AbstractMeta
 
     protected $id = 'firalabs_tv_show_team';
 
-    protected $title = 'Team';
-
-    protected $description = 'The team url of the show';
-
     protected $metaKeys = array(
         'firalabs_tv_show_team_link',
         'firalabs_tv_show_team_description'
     );
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->title = __('Team', 'firalabs-tv-show');
+        $this->description = __('The team url of the show', 'firalabs-tv-show');
+        
+        $this->labels = array(
+            'firalabs_tv_show_team_link' => __('Link', 'firalabs-tv-show'),
+            'firalabs_tv_show_team_description' => __('Description', 'firalabs-tv-show')
+        );
+    }
 }

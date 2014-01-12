@@ -48,6 +48,17 @@ abstract class AbstractMeta
      * @var array
      */
     protected $context = 'normal';
+    
+    /**
+     * Labels for each meta key
+     * @var array
+     */
+    protected $labels = array();
+
+    public function __construct()
+    {
+        //
+    }
 
     /**
      * Subscribe action on load a post
@@ -129,6 +140,7 @@ abstract class AbstractMeta
     {
         View::make('metabox/template.php', array(
             'metaKeys' => $this->metaKeys,
+            'labels' => $this->labels,
             'description' => $this->description,
             'post' => $post,
             'metabox' => $metabox
