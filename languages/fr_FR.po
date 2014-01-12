@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TV Show Plugins\n"
-"POT-Creation-Date: 2014-01-12 18:11-0500\n"
-"PO-Revision-Date: 2014-01-12 18:12-0500\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2014-01-12 18:54-0500\n"
+"PO-Revision-Date: 2014-01-12 18:56-0500\n"
+"Last-Translator: Maxime Beaudoin <firalabs@gmail.com>\n"
 "Language-Team:  <firalabs@gmail.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -13,8 +13,9 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _e;__;_n;gettext;_e\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _e;__;_n;gettext;gettext_noop;_\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
 
 #: ../src/Shows/ShowPostType.php:21
 msgid "TV Shows"
@@ -27,3 +28,68 @@ msgstr "Émission"
 #: ../src/Shows/ShowPostType.php:27
 msgid "shows"
 msgstr "emissions"
+
+#: ../src/Shows/Meta/CategoryMeta.php:27
+msgid "Category"
+msgstr "Catégorie"
+
+#: ../src/Shows/Meta/CategoryMeta.php:28
+msgid "The category of post you want to display on the show page"
+msgstr ""
+"La catégorie des articles que vous voulez afficher sur la page d'émission"
+
+#: ../src/Shows/Meta/FacebookMeta.php:24
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../src/Shows/Meta/FacebookMeta.php:25
+msgid "The facebook url of the show"
+msgstr "Le lien facebook de l'émission"
+
+#: ../src/Shows/Meta/FacebookMeta.php:28 ../src/Shows/Meta/ScheduleMeta.php:28
+#: ../src/Shows/Meta/TeamMeta.php:28 ../src/Shows/Meta/VideoMeta.php:28
+msgid "Link"
+msgstr "Lien"
+
+#: ../src/Shows/Meta/FacebookMeta.php:29 ../src/Shows/Meta/ScheduleMeta.php:29
+#: ../src/Shows/Meta/ShowMeta.php:29 ../src/Shows/Meta/TeamMeta.php:29
+#: ../src/Shows/Meta/VideoMeta.php:29
+msgid "Description"
+msgstr "Description"
+
+#: ../src/Shows/Meta/ScheduleMeta.php:24
+msgid "Schedule"
+msgstr "Grille horaire"
+
+#: ../src/Shows/Meta/ScheduleMeta.php:25
+msgid "The schedule url of the show"
+msgstr "Le lien vers la grille horaire"
+
+#: ../src/Shows/Meta/ShowMeta.php:24
+#, fuzzy
+msgid "Show"
+msgstr "Émission"
+
+#: ../src/Shows/Meta/ShowMeta.php:25
+msgid "The url of the show"
+msgstr "Le lien vers l'émission"
+
+#: ../src/Shows/Meta/ShowMeta.php:28
+msgid "Image"
+msgstr "Image"
+
+#: ../src/Shows/Meta/TeamMeta.php:24
+msgid "Team"
+msgstr "Équipe"
+
+#: ../src/Shows/Meta/TeamMeta.php:25
+msgid "The team url of the show"
+msgstr "Le lien vers l'équipe"
+
+#: ../src/Shows/Meta/VideoMeta.php:24
+msgid "Videos"
+msgstr "Vidéos"
+
+#: ../src/Shows/Meta/VideoMeta.php:25
+msgid "The videos url of the show"
+msgstr "Le lien vers les vidéos"
