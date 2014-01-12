@@ -18,13 +18,13 @@ class ShowPostType
     {
         register_post_type('firalabs_tv_show', array(
             'labels' => array(
-                'name' => __('TV Shows'),
-                'singular_name' => __('TV Shows')
+                'name' => __('TV Shows', 'firalabs-tv-show'),
+                'singular_name' => __('TV Show', 'firalabs-tv-show')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array(
-                'slug' => 'shows'
+                'slug' => __('shows', 'firalabs-tv-show')
             )
         ));
     }

@@ -2,6 +2,7 @@
 namespace Firalabs\Shows\Meta;
 
 use Firalabs\View;
+use WP_Post;
 
 /**
  * Abstract class for plugin meta
@@ -21,6 +22,13 @@ abstract class AbstractMeta
     protected $title;
 
     /**
+     * The meta box id attribute
+     *
+     * @var string
+     */
+    protected $id;
+
+    /**
      * The description of the meta
      *
      * @var string
@@ -28,18 +36,18 @@ abstract class AbstractMeta
     protected $description;
 
     /**
-     * The link meta key
+     * MEta keys list
      *
-     * @var string
+     * @var array
      */
-    protected $linkMetaKey;
+    protected $metaKeys = array();
 
     /**
-     * The image meta key
+     * Context of the meta box
      *
-     * @var string
+     * @var array
      */
-    protected $imageMetaKey;
+    protected $context = 'normal';
 
     /**
      * Subscribe action on load a post
@@ -80,10 +88,10 @@ abstract class AbstractMeta
      */
     public function addMetaBox()
     {
-        add_meta_box($this->linkMetaKey, esc_html__($this->title, 'firalabs-tv-show'), array(
+        add_meta_box($this->id, esc_html__($this->title, 'firalabs-tv-show'), array(
             $this,
             'render'
-        ), 'firalabs_tv_show', 'normal', 'default');
+        ), 'firalabs_tv_show', $this->context, 'default');
     }
 
     /**
@@ -92,7 +100,7 @@ abstract class AbstractMeta
      * @param int $post_id            
      * @param WP_Post $post            
      */
-    public function save($post_id, $post)
+    public function save($post_id, WP_Post $post)
     {
         /*
          * Verify the nonce before proceeding. if (! isset($_POST[$this->linkMetaKey . '_nonce']) || ! wp_verify_nonce($_POST[$this->linkMetaKey . '_nonce'], basename(__FILE__))) return $post_id;
@@ -105,24 +113,25 @@ abstract class AbstractMeta
         if (! current_user_can($post_type->cap->edit_post, $post_id))
             return $post_id;
         
-        $this->update($post_id, $this->linkMetaKey);
-        $this->update($post_id, $this->imageMetaKey);
+        foreach ($this->metaKeys as $key) {
+            $this->update($post_id, $key);
+        }
     }
 
     /**
      * Render the meta box
      *
      * @param WP_Post $object            
-     * @param array $box
-     *            the box data
+     * @param array $key
+     *            the meta box data
      */
-    public function render($post, $box)
+    public function render(WP_Post $post, $metabox)
     {
         View::make('metabox/template.php', array(
-            'linkMetaKey' => $this->linkMetaKey,
-            'imageMetaKey' => $this->imageMetaKey,
+            'metaKeys' => $this->metaKeys,
             'description' => $this->description,
-            'post' => $post
+            'post' => $post,
+            'metabox' => $metabox
         ));
     }
 

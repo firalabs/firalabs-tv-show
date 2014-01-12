@@ -12,41 +12,18 @@ use Firalabs\View;
  */
 class CategoryMeta extends AbstractMeta
 {
+    
+    protected $id = 'firalabs_tv_show_category';
 
     protected $title = 'Category';
 
     protected $description = 'The category of post you want to display on the show page';
 
-    protected $metaKey = 'firalabs_tv_show_category';
+    protected $metaKeys = array(
+        'firalabs_tv_show_category'
+    );
 
-    /**
-     * Add the meta box
-     */
-    public function addMetaBox()
-    {
-        add_meta_box($this->linkMetaKey, esc_html__($this->title, 'firalabs-tv-show'), array(
-            $this,
-            'render'
-        ), 'firalabs_tv_show', 'side', 'default');
-    }
-
-    /**
-     * Save the meta
-     *
-     * @param int $post_id            
-     * @param WP_Post $post            
-     */
-    public function save($post_id, $post)
-    {
-        /* Get the post type object. */
-        $post_type = get_post_type_object($post->post_type);
-        
-        /* Check if the current user has permission to edit the post. */
-        if (! current_user_can($post_type->cap->edit_post, $post_id))
-            return $post_id;
-        
-        $this->update($post_id, $this->metaKey);
-    }
+    protected $context = 'side';
 
     /**
      * Render the meta box

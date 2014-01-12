@@ -23,20 +23,20 @@ class ShowPostMeta
      */
     public function register()
     {
-        $facebook = new FacebookMeta();
-        $facebook->subscribe();
-        
-        $video = new VideoMeta();
-        $video->subscribe();
-        
         $show = new ShowMeta();
         $show->subscribe();
         
         $team = new TeamMeta();
         $team->subscribe();
         
+        $video = new VideoMeta();
+        $video->subscribe();
+        
         $schedule = new ScheduleMeta();
         $schedule->subscribe();
+        
+        $facebook = new FacebookMeta();
+        $facebook->subscribe();
         
         $category = new CategoryMeta();
         $category->subscribe();
