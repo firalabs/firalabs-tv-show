@@ -2,6 +2,7 @@
 namespace Firalabs\Shows\Meta;
 
 use Firalabs\View;
+use WP_Post;
 
 /**
  * The category meta used to display post on the show page
@@ -35,10 +36,10 @@ class CategoryMeta extends AbstractMeta
      * @param array $box
      *            the box data
      */
-    public function render($post, $box)
+    public function render(WP_Post $post, $box)
     {
         View::make('metabox/show-category.php', array(
-            'metaKey' => $this->metaKey,
+            'metaKey' => $this->metaKeys[0],
             'label' => $this->description,
             'post' => $post,
             'categories' => get_categories()

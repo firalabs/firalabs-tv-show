@@ -35,6 +35,6 @@ class Bootstrap
 
     public function il8n()
     {
-        load_plugin_textdomain('firalabs-tv-show', false, basename() . '/firalabs-tv-show/languages');
+        load_plugin_textdomain('firalabs-tv-show', false, 'firalabs-tv-show/languages');
     }
 }

@@ -1,12 +1,12 @@
 <?php
 namespace Firalabs\Shows;
 
-use Firalabs\Shows\Meta\FacebookMeta;
-use Firalabs\Shows\Meta\VideoMeta;
 use Firalabs\Shows\Meta\ShowMeta;
-use Firalabs\Shows\Meta\TeamMeta;
-use Firalabs\Shows\Meta\ScheduleMeta;
 use Firalabs\Shows\Meta\CategoryMeta;
+use Firalabs\Shows\Meta\Box1Meta;
+use Firalabs\Shows\Meta\Box2Meta;
+use Firalabs\Shows\Meta\Box3Meta;
+use Firalabs\Shows\Meta\Box4Meta;
 
 /**
  * Register for plugin custom met
@@ -26,17 +26,17 @@ class ShowPostMeta
         $show = new ShowMeta();
         $show->subscribe();
         
-        $team = new TeamMeta();
-        $team->subscribe();
+        $box = new Box1Meta();
+        $box->subscribe();
         
-        $video = new VideoMeta();
-        $video->subscribe();
+        $box = new Box2Meta();
+        $box->subscribe();
         
-        $schedule = new ScheduleMeta();
-        $schedule->subscribe();
+        $box = new Box3Meta();
+        $box->subscribe();
         
-        $facebook = new FacebookMeta();
-        $facebook->subscribe();
+        $box = new Box4Meta();
+        $box->subscribe();
         
         $category = new CategoryMeta();
         $category->subscribe();

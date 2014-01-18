@@ -29,13 +29,6 @@ abstract class AbstractMeta
     protected $id;
 
     /**
-     * The description of the meta
-     *
-     * @var string
-     */
-    protected $description;
-
-    /**
      * MEta keys list
      *
      * @var array
@@ -157,7 +150,7 @@ abstract class AbstractMeta
     {
         
         /* Get the posted data and sanitize it for use as an HTML class. */
-        $new_meta_value = (isset($_POST[$meta_key]) ? sanitize_html_class($_POST[$meta_key]) : '');
+        $new_meta_value = (isset($_POST[$meta_key]) ? $_POST[$meta_key] : '');
         
         /* Get the meta value of the custom field key. */
         $meta_value = get_post_meta($post_id, $meta_key, true);

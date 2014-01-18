@@ -1,7 +1,3 @@
-<?php wp_nonce_field( basename( __FILE__ ), $linkMetaKey . '_nonce' ); ?>
-<p>
-    <?php echo $description ?>
-</p>
 <?php foreach($metaKeys as $key): ?>
 <p>
 	<label for="<?php echo $key?>"><?php echo $labels[$key]; ?></label><br /> 

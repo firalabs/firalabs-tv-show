@@ -22,7 +22,6 @@ class ShowMeta extends AbstractMeta
     {
         parent::__construct();
         $this->title = __('Show', 'firalabs-tv-show');
-        $this->description = __('The url of the show', 'firalabs-tv-show');
         
         $this->labels = array(
             'firalabs_tv_show_image' => __('Image', 'firalabs-tv-show'),

@@ -1,4 +1,3 @@
-<?php wp_nonce_field( basename( __FILE__ ), $metaKey . '_nonce' ); ?>
 <p>
 	<label for="<?php echo $metaKey?>"><?php echo $label; ?></label><br /> 
 	<select name="<?php echo $metaKey?>" id="<?php echo $metaKey?>" class="widefat">
