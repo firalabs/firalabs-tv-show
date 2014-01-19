@@ -3,6 +3,7 @@ namespace Firalabs\Shows;
 
 use Firalabs\Shows\Meta\ShowMeta;
 use Firalabs\Shows\Meta\CategoryMeta;
+use Firalabs\Shows\Meta\PageShowMeta;
 use Firalabs\Shows\Meta\Box1Meta;
 use Firalabs\Shows\Meta\Box2Meta;
 use Firalabs\Shows\Meta\Box3Meta;
@@ -40,5 +41,8 @@ class ShowPostMeta
         
         $category = new CategoryMeta();
         $category->subscribe();
+        
+        $page = new PageShowMeta();
+        $page->subscribe();
     }
 }
