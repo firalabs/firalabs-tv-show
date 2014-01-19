@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TV Show Plugins\n"
-"POT-Creation-Date: 2014-01-18 09:31-0500\n"
-"PO-Revision-Date: 2014-01-18 09:31-0500\n"
+"POT-Creation-Date: 2014-01-19 10:58-0500\n"
+"PO-Revision-Date: 2014-01-19 10:58-0500\n"
 "Last-Translator: Maxime Beaudoin <firalabs@gmail.com>\n"
 "Language-Team:  <firalabs@gmail.com>\n"
 "Language: fr_FR\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "TV Shows"
 msgstr "Émissions"
 
-#: ../src/Shows/ShowPostType.php:22
+#: ../src/Shows/ShowPostType.php:22 ../src/Shows/Meta/ShowMeta.php:24
 msgid "TV Show"
 msgstr "Émission"
 
@@ -76,10 +76,18 @@ msgid "The category of post you want to display on the show page"
 msgstr ""
 "La catégorie des articles que vous voulez afficher sur la page d'émission"
 
-#: ../src/Shows/Meta/ShowMeta.php:24
+#: ../src/Shows/Meta/PageShowMeta.php:28
 #, fuzzy
-msgid "Show"
+msgid "Page Show"
 msgstr "Émission"
+
+#: ../src/Shows/Meta/PageShowMeta.php:29
+msgid "Select the show associate to this page"
+msgstr "Sélectionnez l'émission à laquelle vous voulez associer cette page."
+
+#, fuzzy
+#~ msgid "Show"
+#~ msgstr "Émission"
 
 #~ msgid "Facebook"
 #~ msgstr "Facebook"
